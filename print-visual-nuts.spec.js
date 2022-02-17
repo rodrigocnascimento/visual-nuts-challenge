@@ -17,14 +17,20 @@ test("should return the default much index range size", () => {
   expect(printer.length).toBe(100);
 });
 
-test("should return Visual if the first index is divisible by 3", () => {
+test("should return Visual if the third index is divisible by 3", () => {
   const printer = printVisualNuts(10);
 
-  expect(printer[0]).toBe("Visual");
+  expect(printer[3]).toBe("Visual");
 });
 
 test("should return Nuts if the first index is divisible by 5", () => {
   const printer = printVisualNuts(11);
 
   expect(printer[5]).toBe("Nuts");
+});
+
+test("should return the fifteenth element as Visual Nuts as is divisible by 3 and 5 at same time", () => {
+  const printer = printVisualNuts(16);
+
+  expect(printer[15]).toBe("Visual Nuts");
 });
