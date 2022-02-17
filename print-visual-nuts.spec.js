@@ -34,3 +34,9 @@ test("should return the fifteenth element as Visual Nuts as is divisible by 3 an
 
   expect(printer[15]).toBe("Visual Nuts");
 });
+
+test("should return the index if its not divisible by 3, 5 or both at same time", () => {
+  const printer = printVisualNuts(16);
+
+  expect(printer[14]).toEqual(14);
+});

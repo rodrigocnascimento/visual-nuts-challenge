@@ -9,6 +9,8 @@ function isDivisibleBy(index) {
     return "Nuts";
   } else if (index % 3 === 0) {
     return "Visual";
+  } else {
+    return index;
   }
 }
 
