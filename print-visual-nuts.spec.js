@@ -1,5 +1,11 @@
 const printVisualNuts = require("./print-visual-nuts");
 
+test("should return empty an array if was passed 0 as size list param", () => {
+  const printer = printVisualNuts(0);
+
+  expect(printer).toEqual([]);
+});
+
 test("should return a range of number based on a size list", () => {
   const printer = printVisualNuts(10);
 
