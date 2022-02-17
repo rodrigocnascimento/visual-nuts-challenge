@@ -5,3 +5,8 @@ test("should return a range of number based on a size list", () => {
 
   expect(printer.length).toBe(10);
 });
+
+test("should return the default much index range size", () => {
+  const printer = printVisualNuts();
+  expect(printer.length).toBe(100);
+});

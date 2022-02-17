@@ -1,4 +1,4 @@
-function range(sizeList) {
+function range(sizeList = 100) {
   return [...Array(sizeList).keys()];
 }
 
