@@ -40,3 +40,12 @@ test("should return the index if its not divisible by 3, 5 or both at same time"
 
   expect(printer[14]).toEqual(14);
 });
+
+test("should test the funcion as a hole", () => {
+  const printer = printVisualNuts(16);
+
+  expect(printer[3]).toEqual("Visual");
+  expect(printer[5]).toEqual("Nuts");
+  expect(printer[14]).toEqual(14);
+  expect(printer[15]).toEqual("Visual Nuts");
+});
