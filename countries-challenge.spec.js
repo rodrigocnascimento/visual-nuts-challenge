@@ -54,3 +54,12 @@ test("should return countries list that speak DE", () => {
 
   expect(countryHelper.findCountriesByLanguage("de")).toEqual(deLangCountries);
 });
+
+test("should return the country that speak more languages", () => {
+  expect(
+    countryHelper.getCountryWithMoreOfficialLanguages(countriesMock)
+  ).toEqual({
+    country: "BE",
+    languages: ["nl", "fr", "de"],
+  });
+});
