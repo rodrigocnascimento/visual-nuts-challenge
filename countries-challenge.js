@@ -39,4 +39,22 @@ CountryHelper.getCountryWithMostOfficialLanguagesThatTalksGerman = function () {
   return CountryHelper.getCountryWithMoreOfficialLanguages(germanCountries);
 };
 
+CountryHelper.mostCommonOfficialLanguage = function () {
+  const countriesList = CountryHelper.getCountries();
+  const mostCommon = [];
+
+  const languages = countriesList.map((country) => country.languages).flat();
+
+  for (const l of languages) {
+    const filteredLangs = languages.filter((lang) => lang === l);
+    const alreadyAdded = mostCommon.some((lang) => lang.language.includes(l));
+
+    if (filteredLangs.length > 1 && !alreadyAdded) {
+      mostCommon.push({ language: l, count: filteredLangs.length });
+    }
+  }
+
+  return mostCommon.sort((a, b) => b.count - a.count);
+};
+
 module.exports = CountryHelper;

@@ -63,3 +63,22 @@ test("should return the country that speak more languages", () => {
     languages: ["nl", "fr", "de"],
   });
 });
+
+test("should return most common languages from country list", () => {
+  const countriesByLanguage = [...countriesMock];
+
+  jest
+    .spyOn(countryHelper, "getCountries")
+    .mockReturnValue(countriesByLanguage);
+
+  expect(countryHelper.mostCommonOfficialLanguage()).toEqual([
+    {
+      language: "nl",
+      count: 2,
+    },
+    {
+      language: "de",
+      count: 2,
+    },
+  ]);
+});
