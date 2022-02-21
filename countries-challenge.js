@@ -7,7 +7,9 @@ CountryHelper.getCountries = function () {
 };
 
 CountryHelper.getNumberOfCountries = function () {
-  return countries.length;
+  const coutriesList = CountryHelper.getCountries();
+
+  return coutriesList.length;
 };
 
 CountryHelper.findCountriesByLanguage = function (language) {
